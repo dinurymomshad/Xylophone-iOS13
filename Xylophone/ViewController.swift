@@ -54,11 +54,10 @@ class ViewController: UIViewController {
 var player: AVAudioPlayer?
 
 func playSound(fileName:String) {
-    guard let path = Bundle.main.path(forResource: fileName, ofType: "wav")else { return }
-    let url = URL(fileURLWithPath: path)
+    let url = Bundle.main.url(forResource: fileName, withExtension: "wav")
     
     do {
-        player = try AVAudioPlayer(contentsOf: url)
+        player = try AVAudioPlayer(contentsOf: url!)
         player?.play()
     } catch let error {
         print(error.localizedDescription)
