@@ -11,11 +11,11 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     @IBAction func onCKeyPress(_ sender: UIButton) {
         print("C got pressed")
         playSound(fileName: "C")
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
     /// Audio Functionality
     var player: AVAudioPlayer?
-
+    
     func playSound(fileName:String) {
         let url = Bundle.main.url(forResource: fileName, withExtension: "wav")
         
